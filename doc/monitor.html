@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module monitor</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>monitor</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/vishnu/MyFiles/workingDirectory/git-workspace/autoMonitorMailbox/autoReadMails/monitor.py">/home/vishnu/MyFiles/workingDirectory/git-workspace/autoMonitorMailbox/autoReadMails/monitor.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="json.html">json</a><br>
+<a href="logging.html">logging</a><br>
+</td><td width="25%" valign=top><a href="msal.html">msal</a><br>
+<a href="pandas.html">pandas</a><br>
+</td><td width="25%" valign=top><a href="pybase64.html">pybase64</a><br>
+<a href="re.html">re</a><br>
+</td><td width="25%" valign=top><a href="requests.html">requests</a><br>
+<a href="sys.html">sys</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="monitor.html#MailboxMonitor">MailboxMonitor</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="MailboxMonitor">class <strong>MailboxMonitor</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#MailboxMonitor">MailboxMonitor</a>(config)<br>
+&nbsp;<br>
+Class&nbsp;to&nbsp;Monitor&nbsp;a&nbsp;Mailbox<br>
+&nbsp;<br>
+Attributes:<br>
+config(dict):&nbsp;Mailbox&nbsp;configuration&nbsp;obtained&nbsp;from&nbsp;microsoft<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;graph&nbsp;application<br>
+app(obj):&nbsp;configured&nbsp;msal&nbsp;application&nbsp;<a href="builtins.html#object">object</a><br>
+&nbsp;<br>
+Methods:<br>
+<a href="#MailboxMonitor-get_access_token">get_access_token</a>():&nbsp;function&nbsp;to&nbsp;obtain&nbsp;access&nbsp;token&nbsp;<br>
+<a href="#MailboxMonitor-get_attachment_in_file">get_attachment_in_file</a>():&nbsp;function&nbsp;to&nbsp;download&nbsp;attachment&nbsp;for&nbsp;a&nbsp;given&nbsp;mail<br>
+<a href="#MailboxMonitor-get_message_details">get_message_details</a>():&nbsp;function&nbsp;to&nbsp;get&nbsp;details&nbsp;of&nbsp;the&nbsp;given&nbsp;mail<br>
+<a href="#MailboxMonitor-read_sent_mails">read_sent_mails</a>():&nbsp;function&nbsp;to&nbsp;read&nbsp;mails&nbsp;from&nbsp;sent&nbsp;items&nbsp;folder<br>
+<a href="#MailboxMonitor-read_folder_mails">read_folder_mails</a>():&nbsp;function&nbsp;to&nbsp;read&nbsp;mails&nbsp;from&nbsp;a&nbsp;given&nbsp;folder<br>
+<a href="#MailboxMonitor-read_inbox_mails">read_inbox_mails</a>():&nbsp;function&nbsp;to&nbsp;read&nbsp;mails&nbsp;from&nbsp;inbox<br>
+<a href="#MailboxMonitor-get_conversation_thread">get_conversation_thread</a>():&nbsp;function&nbsp;to&nbsp;read&nbsp;the&nbsp;latest&nbsp;mail&nbsp;on&nbsp;a&nbsp;given&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mail&nbsp;chain&nbsp;or&nbsp;conversation&nbsp;thread<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="MailboxMonitor-__init__"><strong>__init__</strong></a>(self, config)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="MailboxMonitor-get_access_token"><strong>get_access_token</strong></a>(self)</dt><dd><tt>Function&nbsp;to&nbsp;get&nbsp;the&nbsp;access&nbsp;token&nbsp;by&nbsp;authenticating<br>
+using&nbsp;username&nbsp;and&nbsp;password<br>
+&nbsp;<br>
+parameters:<br>
+None<br>
+&nbsp;<br>
+returns:<br>
+None</tt></dd></dl>
+
+<dl><dt><a name="MailboxMonitor-get_attachment_in_file"><strong>get_attachment_in_file</strong></a>(self, message_id: str, file: str) -&gt; None</dt><dd><tt>Function&nbsp;to&nbsp;download&nbsp;the&nbsp;attachment&nbsp;in&nbsp;the&nbsp;given&nbsp;messsage&nbsp;id<br>
+to&nbsp;the&nbsp;provided&nbsp;full&nbsp;file&nbsp;path<br>
+&nbsp;<br>
+parameters:<br>
+message_id(str)*&nbsp;:&nbsp;Id&nbsp;of&nbsp;the&nbsp;message&nbsp;from&nbsp;which&nbsp;the&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attachment&nbsp;is&nbsp;to&nbsp;be&nbsp;downloaded<br>
+file(str)*&nbsp;:&nbsp;full&nbsp;path&nbsp;including&nbsp;filename&nbsp;to&nbsp;which&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;attachment&nbsp;is&nbsp;to&nbsp;be&nbsp;saved<br>
+&nbsp;<br>
+returns:<br>
+None</tt></dd></dl>
+
+<dl><dt><a name="MailboxMonitor-get_conversation_thread"><strong>get_conversation_thread</strong></a>(self, conversation_id: str)</dt><dd><tt>Function&nbsp;to&nbsp;get&nbsp;the&nbsp;latest&nbsp;conversation&nbsp;on&nbsp;a&nbsp;mail&nbsp;chain<br>
+&nbsp;<br>
+parameters:<br>
+conversation_id(str)*:&nbsp;conversation&nbsp;id&nbsp;of&nbsp;the&nbsp;mail&nbsp;chain<br>
+&nbsp;<br>
+returns:<br>
+dict_conversation_details(dict)&nbsp;:&nbsp;dictionary&nbsp;containing&nbsp;details&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;the&nbsp;latest&nbsp;update&nbsp;on&nbsp;the&nbsp;mail&nbsp;thread</tt></dd></dl>
+
+<dl><dt><a name="MailboxMonitor-get_message_details"><strong>get_message_details</strong></a>(self, message_id: str) -&gt; 'Message details(dict)'</dt><dd><tt>Function&nbsp;to&nbsp;fetch&nbsp;conversation&nbsp;ID,subject,body,ToRecipients,<br>
+CC&nbsp;Recipients&nbsp;from&nbsp;message&nbsp;ID<br>
+&nbsp;<br>
+parameters:<br>
+message_id(str)*&nbsp;:&nbsp;unique&nbsp;ID&nbsp;of&nbsp;the&nbsp;email&nbsp;<br>
+&nbsp;<br>
+returns:<br>
+dict_message_details(dict)*&nbsp;:&nbsp;Dictionary&nbsp;containing&nbsp;message&nbsp;details</tt></dd></dl>
+
+<dl><dt><a name="MailboxMonitor-read_folder_mails"><strong>read_folder_mails</strong></a>(self, folder_name: str)</dt><dd><tt>Function&nbsp;to&nbsp;read&nbsp;the&nbsp;latest&nbsp;unread&nbsp;mail&nbsp;from&nbsp;a&nbsp;<br>
+given&nbsp;inbox&nbsp;folder<br>
+&nbsp;<br>
+parameters:<br>
+folder_name(str)*&nbsp;:&nbsp;Folder&nbsp;from&nbsp;which&nbsp;the&nbsp;mail&nbsp;is&nbsp;to&nbsp;be&nbsp;read<br>
+&nbsp;<br>
+returns:<br>
+message_details(dict)&nbsp;:&nbsp;dictionary&nbsp;containg&nbsp;latest&nbsp;message&nbsp;details</tt></dd></dl>
+
+<dl><dt><a name="MailboxMonitor-read_inbox_mails"><strong>read_inbox_mails</strong></a>(self)</dt><dd><tt>function&nbsp;to&nbsp;read&nbsp;latest&nbsp;unread&nbsp;mail&nbsp;from&nbsp;inbox<br>
+&nbsp;<br>
+parameters:<br>
+None<br>
+&nbsp;<br>
+returns:<br>
+message_details(dict)&nbsp;:&nbsp;dictionary&nbsp;containing&nbsp;latest&nbsp;message&nbsp;details</tt></dd></dl>
+
+<dl><dt><a name="MailboxMonitor-read_sent_mails"><strong>read_sent_mails</strong></a>(self)</dt><dd><tt>fetches&nbsp;the&nbsp;last&nbsp;5&nbsp;emails&nbsp;from&nbsp;the&nbsp;sent<br>
+items&nbsp;folder<br>
+&nbsp;<br>
+parameters:<br>
+None<br>
+&nbsp;<br>
+returns:<br>
+dict_log(dict):&nbsp;nested&nbsp;dictionary&nbsp;with&nbsp;message&nbsp;id&nbsp;as&nbsp;key<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;message&nbsp;details&nbsp;dictionary&nbsp;as&nbsp;value</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

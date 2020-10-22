@@ -1,0 +1,6 @@
+{"client_id" : "client id (application id)", 
+"authority" : "https://login.microsoftonline.com/Tenant ID here/",
+"scope" : "User.Read,Mail.Read,Mail.ReadWrite",
+"username" : "Email_here",
+"password" : "password_here",
+"endpoint" : "https://graph.microsoft.com/v1.0"}
